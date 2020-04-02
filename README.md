@@ -14,32 +14,47 @@ rather than non-standard evaluation or processing user input.
 
 Start with the defintion of the (arithmetic) mean of a function over a given interval:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\bar{f(x)}=\frac{1}{N}\sum\limits_{i=1}^N{f(x_{i})};a\leq{x}\leq{b}" />
+![\bar{f(x)}=\frac{1}{N}\sum_{i=1}^N{f(x_{i})};a\leq{x}\leq{b}](https://render.githubusercontent.com/render/math?math=%5Cbar%7Bf(x)%7D%3D%5Cfrac%7B1%7D%7BN%7D%5Csum_%7Bi%3D1%7D%5EN%7Bf(x_%7Bi%7D)%7D%3Ba%5Cleq%7Bx%7D%5Cleq%7Bb%7D)
 
 Now define the same thing in the continuous case rather than the discrete:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\bar{f(x)}=\frac{1}{b - a}\int\limits_{a}^b{f(x)}dx" />
+![\bar{f(x)}=\frac{1}{b - a}\int\limits_{a}^b{f(x)}dx](https://render.githubusercontent.com/render/math?math=%5Cbar%7Bf(x)%7D%3D%5Cfrac%7B1%7D%7Bb%20-%20a%7D%5Cint%5Climits_%7Ba%7D%5Eb%7Bf(x)%7Ddx)
 
 Now, we can rearrange this expression to get a definition of the integral in terms of the mean and the width of the interval:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\int\limits_{a}^b{f(x)}dx=(b - a) * \bar{f(x)}" />
+![\int_{a}^b{f(x)}dx=(b - a) * \bar{f(x)}](https://render.githubusercontent.com/render/math?math=%5Cint_%7Ba%7D%5Eb%7Bf(x)%7Ddx%3D(b%20-%20a)%20*%20%5Cbar%7Bf(x)%7D)
 
-So, this implies that we can calculate the integral of <img src="https://latex.codecogs.com/svg.latex?\Large&space;f(x)"> 
-over the interval <img src="https://latex.codecogs.com/svg.latex?\Large&space;[a,b]"> by first getting the average of the function 
-over the interval <img src="https://latex.codecogs.com/svg.latex?\Large&space;f(x)">, and then multiplying by <img src="https://latex.codecogs.com/svg.latex?\Large&space;(b-a)">.
+So, this implies that we can calculate the integral of
+![f(x)](https://render.githubusercontent.com/render/math?math=f(x))
+over the interval
+![f(x)](https://render.githubusercontent.com/render/math?math=[a,b])
+by first getting the average of the function over the interval
+![f(x)](https://render.githubusercontent.com/render/math?math=f(x))
+, and then multiplying by
+![f(x)](https://render.githubusercontent.com/render/math?math=[a,b])
+.
 
-This is great, because very often we find ourselves in the situation where evaluating <img src="https://latex.codecogs.com/svg.latex?\Large&space;f(x)"> is easy for any given <img src="https://latex.codecogs.com/svg.latex?\Large&space;x">, but _integrating_ <img src="https://latex.codecogs.com/svg.latex?\Large&space;f(x)"> over any given integral is very difficult indeed.
+This is great, because very often we find ourselves in the situation
+where evaluating
+![f(x)](https://render.githubusercontent.com/render/math?math=f(x))
+is easy for any given
+![f(x)](https://render.githubusercontent.com/render/math?math=x)
+, but _integrating_
+![f(x)](https://render.githubusercontent.com/render/math?math=f(x))
+over any given integral is very difficult indeed.
 
-The simplest, most naive, approach is to Uniformly sample from the interval <img src="https://latex.codecogs.com/svg.latex?\Large&space;f(x)">, and then evaluate <img src="https://latex.codecogs.com/svg.latex?\Large&space;f(x)" /> for each 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;x\sim&space;Unif(a,b)" />.
+The simplest, most naive, approach is to Uniformly sample from the interval ![(b - a)](https://render.githubusercontent.com/render/math?math=(b%20-%20a)), and then evaluate ![f(x)](https://render.githubusercontent.com/render/math?math=f(x)) for each 
+![x \sim Unif(a,b)](https://render.githubusercontent.com/render/math?math=x%20%5Csim%20Unif(a%2Cb)).
 
-Now we have a sequence <img src="https://latex.codecogs.com/svg.latex?\Large&space;f(x_{1}), f(x_{2}), ..., f(x_{N});&space;x\sim&space;Unif(a,b)">.
+Now we have a sequence
+
+<img src="https://render.githubusercontent.com/render/math?math=f(x_{1}), f(x_{2}), ..., f(x_{N});&space;x\sim&space;Unif(a,b)">
 
 We can take the mean of this sequence,
 multiply by the width of the interval,
 and we get our discrete approximation of the integral:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\int\limits_{a}^b{f(x)}dx\approx(b - a) * \bar{f(x)};&space;x\sim&space;Unif(a,b)"/>
+![\int_{a}^{b} f(x) dx\approx(b - a) * \bar{f(x)};\  x\sim Unif(a,b)](https://render.githubusercontent.com/render/math?math=%5Cint_%7Ba%7D%5E%7Bb%7D%20f(x)%20dx%5Capprox(b%20-%20a)%20*%20%5Cbar%7Bf(x)%7D%3B%5C%20%20x%5Csim%20Unif(a%2Cb))
 
 ## Setup
 
